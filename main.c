@@ -26,11 +26,11 @@ void *thread_func(void *arg) { pthread_exit(NULL); }
 void *thread_func_vec(void *arg) { pthread_exit(NULL); }
 
 // Parallel computation using pthreads
-void distPar(float *U, float *V, int n, int nb_threads, int mode,
+void distPar(double *U, double *V, int n, int nb_threads, int mode,
              double *result) {}
 int main() {
-  float *U = (float *)aligned_alloc(32, N * sizeof(float));
-  float *V = (float *)aligned_alloc(32, N * sizeof(float));
+  double *U = (double *)aligned_alloc(32, N * sizeof(double));
+  double *V = (double *)aligned_alloc(32, N * sizeof(double));
 
   initialize_random(U, N);
   initialize_random(V, N);

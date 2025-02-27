@@ -5,7 +5,7 @@
 #include <sys/time.h>
 
 // Function to initialize an array with random float values between 0 and 1
-void initialize_random(float *arr, int size) {
+void initialize_random(double *arr, int size) {
   for (int i = 0; i < size; i++) {
     arr[i] = (float)rand() / RAND_MAX;
   }
