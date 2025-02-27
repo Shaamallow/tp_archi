@@ -1,14 +1,18 @@
 CC = gcc
-CFLAGS = -pthread -mavx -std=c11 -Wall
-TARGETS = parallel_distance avx_demo
+CFLAGS = -pthread -mavx -lm -std=c11 -Wall
+TARGET = main
 
-all: $(TARGETS)
+all: $(TARGET)
 
-parallel_distance: parallel_distance.c
-	$(CC) $(CFLAGS) -o parallel_distance parallel_distance.c -lm
+$(TARGET): main.o utils.o
+	$(CC) $(CFLAGS) -o $(TARGET) main.o utils.o
 
-avx_demo: avx_demo.c
-	$(CC) $(CFLAGS) -o avx_demo avx_demo.c -lm
+main.o: main.c utils.h
+	$(CC) $(CFLAGS) -c main.c
+
+utils.o: utils.c utils.h
+	$(CC) $(CFLAGS) -c utils.c
 
 clean:
-	rm -f $(TARGETS)
+	rm -f $(TARGET) *.o
+

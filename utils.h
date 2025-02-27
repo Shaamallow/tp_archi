@@ -1,0 +1,13 @@
+// utils.h
+#ifndef UTILS_H
+#define UTILS_H
+
+#include <immintrin.h>
+
+// Function to allocate aligned memory and initialize with random values
+void initialize_random(float *arr, int size);
+
+// Function to print the first N elements of an array
+void print_array(float *arr, int size);
+
+#endif // UTILS_H
