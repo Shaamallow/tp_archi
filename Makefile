@@ -1,12 +1,14 @@
 CC = gcc
-CFLAGS = -pthread -mavx -std=c11
-TARGET = parallel_distance
+CFLAGS = -pthread -mavx -std=c11 -Wall
+TARGETS = parallel_distance avx_demo
 
-all: $(TARGET)
+all: $(TARGETS)
 
-$(TARGET): parallel_distance.c
-	$(CC) $(CFLAGS) -o $(TARGET) parallel_distance.c -lm
+parallel_distance: parallel_distance.c
+	$(CC) $(CFLAGS) -o parallel_distance parallel_distance.c -lm
+
+avx_demo: avx_demo.c
+	$(CC) $(CFLAGS) -o avx_demo avx_demo.c -lm
 
 clean:
-	rm -f $(TARGET)
-
+	rm -f $(TARGETS)
