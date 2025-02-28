@@ -2,6 +2,8 @@
 
 _« Architecture matérielle et logicielle des ordinateurs »_
 
+## Instructions
+
 ### Objectif
 
 Écrire un programme « multi-threadé » et « vectoriel » en C, puis comprendre les divers aspects liés à son fonctionnement correct ainsi qu’à ses performances.
@@ -75,3 +77,14 @@ b) **Calculer et afficher** (en prenant `n=1024²`) :
 - **Temps d’exécution séquentielle**,
 - **Temps d’exécution parallèle**,
 - **Accélération**.
+
+## Rendu
+
+Voici quelques remarques sur le rendu proposé:
+
+- Separation du code dans plusieurs fichiers pour facilité la lisibilité (compilation via le makefile proposé). Les fichiers d'interet principal sont `operation.c` et `main.c` pour les implémentations des différentes fonctions proposées.
+- Le calcul vectoriel étant réalisé sur des floats et non des doubles, mon implementation souffre d'erreurs d'approximation... Je fourni donc également la fonction `vect_dist_double` avec les caractéristiques suivantes et son benchmark.
+
+```c
+double vect_dist_double(double *U, double *V, int n);
+```
